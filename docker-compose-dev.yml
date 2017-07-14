@@ -1,0 +1,26 @@
+# this is our development docker-compose
+# the sync image - not redefining anything else except volumes
+
+version: "2"
+services:
+  app:
+    volumes:
+      - main-sync:/var/www:nocopy
+      # will be mounted on /var/www
+      # nocopy is important
+      # ignore the contents which have been on the initial volume / image and do enforce the content from our host on the initial wiring
+  web:
+    volumes:
+      - main-sync:/var/www:nocopy
+
+  # some problems with permissions
+  # database:
+  #     volumes:
+  #         - database-sync:/var/lib/mysql
+
+# that the important thing
+volumes:
+  main-sync:
+    external: true
+  # database-sync:
+  #   external: true
