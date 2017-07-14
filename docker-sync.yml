@@ -1,17 +1,4 @@
-# Install:
-#   $ sudo gem install docker-sync
-# Use this:
-#   $ docker-sync start
-#   $ docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
-#
-# To start sync services and docker-compose at the same time:
-#   $ docker-sync-stack start
-# Clean:
-#   $ docker-sync-stack clean
-
 version: "2"
-# options:
-#   verbose: true
 syncs:
   # Ensure this name is unique and does not match your other application container name
   # Tip: add -sync and you keep consistent names as a convention
@@ -19,6 +6,7 @@ syncs:
     # sync_strategy: 'native_osx'   # not needed, this is the default now
     src: '../'
     sync_userid: 33
+    #to increase speed of initial running exclude some files
     sync_excludes:
       - 'composer.json'
       - 'composer.lock'
@@ -38,18 +26,18 @@ syncs:
       - 'docker'
       # etc
 
-    # watch_excludes: ['.*/vendor']   # watch excludes cannot be used with unison or native_osx right now, only sync_excludes
+#     watch_excludes: ['.*/vendor']   # watch excludes cannot be used with unison or native_osx right now, only sync_excludes
 
-  # database-sync:
-  #   src: './data/mysql'
+#   database-sync:
+#     src: './data/mysql'
 
 # For rsync
 # The rsync has drasticly faster inital syncronization, but implements a one way sync only (from local to containter)
 # and deleting files on the host does yet not delete them on the container
 #
-    # sync_host_port: 10872
-    # sync_strategy: 'rsync'
-    # sync_args: '-L'
+#     sync_host_port: 10872
+#     sync_strategy: 'rsync'
+#     sync_args: '-L'
 #
 # -l, --links
 # When symlinks are encountered, recreate the symlink on the destination.

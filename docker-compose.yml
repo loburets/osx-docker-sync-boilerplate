@@ -8,6 +8,7 @@ services:
             - ../:/var/www
         ports:
             - "8081:80"
+#            - "80:80"
         links:
             - app
     app:
