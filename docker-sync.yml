@@ -34,8 +34,8 @@ syncs:
 
 #     watch_excludes: ['.*/vendor']   # watch excludes cannot be used with unison or native_osx right now, only sync_excludes
 
-#   database-sync:
-#     src: './data/mysql'
+#  database-sync:
+#    src: './data/mysql'
 
 # For rsync
 # The rsync has drasticly faster inital syncronization, but implements a one way sync only (from local to containter)
