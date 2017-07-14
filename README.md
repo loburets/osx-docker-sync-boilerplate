@@ -18,17 +18,19 @@ All other is Docker containers for PHP and can be replaced by any what you want
 
 ## Install:
 
+    sudo gem install docker-sync
     # At project directory
     git clone git@github.com:dima-loburec/osx-docker-sync-boilerplate.git docker
-    sudo gem install docker-sync
+    cd docker/
 
 ## Use:
 
     docker-sync start
     docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
 
-    # To start sync services and docker-compose at the same time:
+    # Or to start at the same time:
     docker-sync-stack start
+    # Crtl+C to stop
     
     # Stop and remove containers at the same time:
     docker-sync-stack clean

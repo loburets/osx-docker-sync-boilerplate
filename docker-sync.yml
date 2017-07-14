@@ -12,8 +12,13 @@ syncs:
       - 'composer.lock'
       - 'bower.json'
       - 'package.json'
+      - 'package-lock.json'
+      - 'webpack.mix.js'
       - '.gitignore'
+      - '.gitattributes'
       - '.git'
+      - 'phpunit.xml'
+      - 'readme.md'
       - '*.coffee'
       - '*.scss'
       - '*.sass'
@@ -22,7 +27,8 @@ syncs:
       - 'node_modules'
       - '.DS_Store'
       - '.idea'
-      - 'data'
+      - '.phpstorm.meta.php'
+      - '_ide_helper.php'
       - 'docker'
       # etc
 
