@@ -1,5 +1,7 @@
 # Docker-sync OS X boilerplate
 
+OUTDATED! Nowadays docker is fine on OSX
+
 ## What is it
 
 There is a problem with performance when you share code into Docker containers under OS X.
